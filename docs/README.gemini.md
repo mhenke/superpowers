@@ -53,7 +53,7 @@ cd ~/.gemini/superpowers && git pull
 
 ```bash
 find ~/.gemini/skills -type l -lname '*/superpowers/skills/*' -delete
-find ~/.gemini/agents -type l -lname '*/superpowers/.gemini/agents/*' -delete
+find ~/.gemini/agents -type l -lname '*/superpowers/agents/*' -delete
 # Edit ~/.gemini/GEMINI.md and remove the SUPERPOWERS-CONTEXT block
 rm -rf ~/.gemini/superpowers
 ```

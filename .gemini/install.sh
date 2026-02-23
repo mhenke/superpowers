@@ -164,7 +164,7 @@ fi
 # Trim trailing blank lines (prevents accumulation on repeated runs)
 if sed -i.bak -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}' "$GEMINI_MD" 2>/dev/null; then
     rm -f "${GEMINI_MD}.bak"
-elif awk '{lines[NR]=$0} END{e=NR; while(e>0 && lines[e]=="") e--; for(i=1;i<=e;i++) print lines[i]}' "$GEMINI_MD" > "${GEMINI_MD}.tmp" 2>/dev/null; then
+elif awk '{lines[NR]=$0} END{e=NR; while(e>0 && lines[e]~/^[[:space:]]*$/) e--; for(i=1;i<=e;i++) print lines[i]}' "$GEMINI_MD" > "${GEMINI_MD}.tmp" 2>/dev/null; then
     mv "${GEMINI_MD}.tmp" "$GEMINI_MD"
 else
     echo "Warning: Could not trim blank lines from $GEMINI_MD" >&2

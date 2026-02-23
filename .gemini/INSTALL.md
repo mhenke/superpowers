@@ -111,7 +111,7 @@ Skills update instantly through the symlinks.
 2. **Remove the agent symlinks:**
 
    ```bash
-   find ~/.gemini/agents -type l -lname '*/superpowers/.gemini/agents/*' -delete
+   find ~/.gemini/agents -type l -lname '*/superpowers/agents/*' -delete
    ```
 
 3. **Clean up GEMINI.md:** Edit `~/.gemini/GEMINI.md` and remove the block between
